@@ -6,10 +6,17 @@ function preload() {
 
 
 function setup() {
-	createCanvas(1600, 800)
+	createCanvas(2000, 1000)
 }
 
 
 function draw() {
 	game.draw()
+}
+
+function keyPressed() {
+	if (keyCode === 32) {
+		// make the player jump
+		game.player.jump()
+	}
 }
