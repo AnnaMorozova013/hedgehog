@@ -56,12 +56,9 @@ class Game {
 
 		this.collections = this.collections.filter((collection) => {
 			if (collection.scoring(this.player)) {
-				console.log('Yummy');
-				return false
-			} else if (collection.x < 0 - collection.width) {
 				return false
 			} else {
-				return true
+				return true  
 			}
 		})
 
@@ -77,14 +74,16 @@ class Game {
 
 		this.obstacles = this.obstacles.filter((obstacle) => {
 			if (obstacle.collision(this.player)) {
-				console.log('Game Over');
-				return false
-			} else if (obstacle.x < 0 - obstacle.width) {
 				return false
 			} else {
 				return true
 			}
 		})
 
+		//status bar
+		fill('red')
+		textSize(70)
+		text('Score:', 50, 100);
+		text(this.score, 270, 100)
 	}
 }

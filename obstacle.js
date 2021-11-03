@@ -16,11 +16,12 @@ class Collection {
     let collectionMiddleX = this.x + this.width / 2;
     let collectionMiddleY = this.y + this.height / 2;
     let playerX = playerInfo.x + playerInfo.width / 2;
-    let playerY = playerInfo.y + playerInfo.height / 3;
+    let playerY = playerInfo.y + playerInfo.height / 2;
     if (dist(collectionMiddleX, collectionMiddleY, playerX, playerY) > this.height) {
       return false
     } else {
-      document.querySelector('h2').innerText = `Score: ${++game.score}`
+      game.score++
+      return true   
     }
   }
 }
@@ -43,11 +44,11 @@ class Obstacle {
     let obstacleMiddleX = this.x + this.width / 2;
     let obstacleMiddleY = this.y + this.height / 2;
     let playerX = playerInfo.x + playerInfo.width / 2;
-    let playerY = playerInfo.y + playerInfo.height / 3;
+    let playerY = playerInfo.y + playerInfo.height / 2;
     if (dist(obstacleMiddleX, obstacleMiddleY, playerX, playerY) > this.height) {
       return false
     } else {
-      
+        return true
     }
   }
 
