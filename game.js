@@ -1,14 +1,22 @@
 class Game {
 
-	constructor() {
+	setup() {
 		this.background = new Background()
-		this.backgroundImages = []
 		this.player = new Player()
 		this.obstacles = []
 		this.collections = []
+		this.score = 0
+	}
+	constructor() {
+		this.backgroundImages
+		this.obstacleImage
+		this.collectionImage
+		this.endGameImage
 	}
 
 	preload() {
+
+		this.endGameImage = loadImage('assets/pngaaa.com-763555.png')
 
 		this.obstacleImage = loadImage('assets/kisspng-mushroom-cartoon-snacks-5acaa7e9d23ae5.2640844415232306978611.png')
 
@@ -36,9 +44,28 @@ class Game {
 		this.background.draw()
 		this.player.draw()
 
-	if (frameCount % 150 === 0) {
-			// push only when they meet the condition to have enough distance from collection
-			// use array.every method
+		if (frameCount % 250 === 0) {
+			this.collections.push(new Collection(this.collectionImage))
+		}
+		this.collections.forEach(function (collection, index, array) {
+			collection.draw()
+			if (collection.x < 0) {
+				array.splice(index, 1)
+			}
+		})
+
+		this.collections = this.collections.filter((collection) => {
+			if (collection.scoring(this.player)) {
+				console.log('Yummy');
+				return false
+			} else if (collection.x < 0 - collection.width) {
+				return false
+			} else {
+				return true
+			}
+		})
+
+		if (frameCount % 150 === 0) {
 			this.obstacles.push(new Obstacle(this.obstacleImage))
 		}
 		this.obstacles.forEach(function (obstacle, index, array) {
@@ -48,15 +75,16 @@ class Game {
 			}
 		})
 
-	if (frameCount % 250 === 0) {
-		this.collections.push(new Collection(this.collectionImage))
-	}
-	this.collections.forEach(function (collection, index, array) {
-		collection.draw()
-		if (collection.x < 0) {
-			array.splice(index, 1)
-		}
-	})
-}
-}
+		this.obstacles = this.obstacles.filter((obstacle) => {
+			if (obstacle.collision(this.player)) {
+				console.log('Game Over');
+				return false
+			} else if (obstacle.x < 0 - obstacle.width) {
+				return false
+			} else {
+				return true
+			}
+		})
 
+	}
+}

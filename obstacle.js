@@ -1,32 +1,54 @@
-class Obstacle {
-    constructor(image) {
-        this.width = 130
-        this.height = 130
-        this.x = 2000 
-        this.y = Math.floor(Math.random() * (850 - 690 + 1) + 690)
-        this.image = image
-    } 
-    draw() {
-		this.x -= 5
-		image(this.image, this.x, this.y, this.width, this.height)
-	}
-
-}
-
 class Collection {
 
-constructor(image) {
-        this.width = 130
-        this.height = 130
-        this.x = 2000 
-        this.y = Math.floor(Math.random() * (850 - 690 + 1) + 690)
-        this.image = image
-    } 
-    draw() {
-		this.x -= 5
-		image(this.image, this.x, this.y, this.width, this.height)
-	}
+  constructor(image) {
+    this.width = 120
+    this.height = 120
+    this.x = 2000
+    this.y = Math.floor(Math.random() * (740 - 675 + 1) + 675)
+    this.image = game.collectionImage
+  }
+  draw() {
+    this.x -= 5
+    image(this.image, this.x, this.y, this.width, this.height)
+  }
+
+  scoring (playerInfo) {
+    let collectionMiddleX = this.x + this.width / 2;
+    let collectionMiddleY = this.y + this.height / 2;
+    let playerX = playerInfo.x + playerInfo.width / 2;
+    let playerY = playerInfo.y + playerInfo.height / 3;
+    if (dist(collectionMiddleX, collectionMiddleY, playerX, playerY) > this.height) {
+      return false
+    } else {
+      document.querySelector('h2').innerText = `Score: ${++game.score}`
+    }
+  }
 }
 
+class Obstacle {
+  constructor(image) {
+    this.width = 150
+    this.height = 150
+    this.x = 2000
+    this.y = Math.floor(Math.random() * (860 - 745 + 1) + 745)
+    this.image = game.obstacleImage
+  }
 
+  draw() {
+    this.x -= 5
+    image(this.image, this.x, this.y, this.width, this.height)
+  }
 
+  collision (playerInfo) {
+    let obstacleMiddleX = this.x + this.width / 2;
+    let obstacleMiddleY = this.y + this.height / 2;
+    let playerX = playerInfo.x + playerInfo.width / 2;
+    let playerY = playerInfo.y + playerInfo.height / 3;
+    if (dist(obstacleMiddleX, obstacleMiddleY, playerX, playerY) > this.height) {
+      return false
+    } else {
+      
+    }
+  }
+
+}
