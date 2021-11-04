@@ -12,7 +12,7 @@ class Collection {
     image(this.image, this.x, this.y, this.width, this.height)
   }
 
-  scoring (playerInfo) {
+  scoring(playerInfo) {
     let collectionMiddleX = this.x + this.width / 2;
     let collectionMiddleY = this.y + this.height / 2;
     let playerX = playerInfo.x + playerInfo.width / 2;
@@ -21,7 +21,7 @@ class Collection {
       return false
     } else {
       game.score++
-      return true   
+      return true
     }
   }
 }
@@ -40,7 +40,7 @@ class Obstacle {
     image(this.image, this.x, this.y, this.width, this.height)
   }
 
-  collision (playerInfo) {
+  collision(playerInfo) {
     let obstacleMiddleX = this.x + this.width / 2;
     let obstacleMiddleY = this.y + this.height / 2;
     let playerX = playerInfo.x + playerInfo.width / 2;
@@ -48,8 +48,8 @@ class Obstacle {
     if (dist(obstacleMiddleX, obstacleMiddleY, playerX, playerY) > this.height) {
       return false
     } else {
-       game.lives.splice(-1)
-        return true
-    }    
+      game.lives.splice(-1)
+      return true
+    }
   }
 }

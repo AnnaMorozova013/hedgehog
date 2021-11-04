@@ -6,7 +6,7 @@ class Game {
 		this.obstacles = []
 		this.collections = []
 		this.score = 0
-		this.lives = ['❤️', '❤️', '❤️'] 
+		this.lives = ['❤️', '❤️', '❤️']
 	}
 	constructor() {
 		this.backgroundImages
@@ -27,22 +27,22 @@ class Game {
 		this.playerImage = loadImage('Assets/kisspng-european-hedgehog-u0418u0441u0442u043eu0440u0438u0-cartoon-hedgehog-5a7ac1116d4006.8550967915179942574475.png')
 
 		this.backgroundImages = [
-			{ src: loadImage('Assets/_11_background.png'), x: 0, speed: 0 },
-			{ src: loadImage('Assets/_10_distant_clouds.png'), x: 0, speed: 0.3 },
-			{ src: loadImage('Assets/_09_distant_clouds1.png'), x: 0, speed: 0.7 },
-			{ src: loadImage('Assets/_08_clouds.png'), x: 0, speed: 1 },
-			{ src: loadImage('Assets/_07_huge_clouds.png'), x: 0, speed: 1.3 },
-			{ src: loadImage('Assets/_06_hill2.png'), x: 0, speed: 1.7 },
-			{ src: loadImage('Assets/_05_hill1.png'), x: 0, speed: 2 },
-			{ src: loadImage('Assets/_04_bushes.png'), x: 0, speed: 2.5 },
-			{ src: loadImage('Assets/_03_distant_trees.png'), x: 0, speed: 3 },
-			{ src: loadImage('Assets/_02_trees and bushes.png'), x: 0, speed: 4 },
-			{ src: loadImage('Assets/_01_ground.png'), x: 0, speed: 7 },
+			{ src: loadImage('hedgehog/Assets/_11_background.png'), x: 0, speed: 0 },
+			{ src: loadImage('hedgehog/Assets/_10_distant_clouds.png'), x: 0, speed: 0.3 },
+			{ src: loadImage('hedgehog/Assets/_09_distant_clouds1.png'), x: 0, speed: 0.7 },
+			{ src: loadImage('hedgehog/Assets/_08_clouds.png'), x: 0, speed: 1 },
+			{ src: loadImage('hedgehog/Assets/_07_huge_clouds.png'), x: 0, speed: 1.3 },
+			{ src: loadImage('hedgehog/Assets/_06_hill2.png'), x: 0, speed: 1.7 },
+			{ src: loadImage('hedgehog/Assets/_05_hill1.png'), x: 0, speed: 2 },
+			{ src: loadImage('hedgehog/Assets/_04_bushes.png'), x: 0, speed: 2.5 },
+			{ src: loadImage('hedgehog/Assets/_03_distant_trees.png'), x: 0, speed: 3 },
+			{ src: loadImage('hedgehog/Assets/_02_trees and bushes.png'), x: 0, speed: 4 },
+			{ src: loadImage('hedgehog/Assets/_01_ground.png'), x: 0, speed: 7 },
 		]
 
 	}
 
-	resetSketch () {
+	resetSketch() {
 		window.location.reload()
 	}
 
@@ -51,7 +51,7 @@ class Game {
 		clear()
 		this.background.draw()
 		this.player.draw()
-	
+
 		if (frameCount % 250 === 0) {
 			this.collections.push(new Collection(this.collectionImage))
 		}
@@ -66,7 +66,7 @@ class Game {
 			if (collection.scoring(this.player)) {
 				return false
 			} else {
-				return true  
+				return true
 			}
 		})
 
@@ -97,14 +97,14 @@ class Game {
 		text('Lives:', 50, 200)
 		text(this.lives.join(''), 270, 200)
 
-		if(this.lives.length <= 0) {
+		if (this.lives.length <= 0) {
 			noLoop()
 			image(this.endGameImage, 500, 250, 1000, 500)
 			this.button = createImg('Assets/4972899ccd327d1.png', 1000, 500)
 			this.button.width = 150
 			this.button.height = 500
 			this.button.mousePressed(this.resetSketch)
-			}
 		}
 	}
+}
 
