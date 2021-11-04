@@ -27,17 +27,17 @@ class Game {
 		this.playerImage = loadImage('Assets/kisspng-european-hedgehog-u0418u0441u0442u043eu0440u0438u0-cartoon-hedgehog-5a7ac1116d4006.8550967915179942574475.png')
 
 		this.backgroundImages = [
-			{ src: loadImage('hedgehog/Assets/_11_background.png'), x: 0, speed: 0 },
-			{ src: loadImage('hedgehog/Assets/_10_distant_clouds.png'), x: 0, speed: 0.3 },
-			{ src: loadImage('hedgehog/Assets/_09_distant_clouds1.png'), x: 0, speed: 0.7 },
-			{ src: loadImage('hedgehog/Assets/_08_clouds.png'), x: 0, speed: 1 },
-			{ src: loadImage('hedgehog/Assets/_07_huge_clouds.png'), x: 0, speed: 1.3 },
-			{ src: loadImage('hedgehog/Assets/_06_hill2.png'), x: 0, speed: 1.7 },
-			{ src: loadImage('hedgehog/Assets/_05_hill1.png'), x: 0, speed: 2 },
-			{ src: loadImage('hedgehog/Assets/_04_bushes.png'), x: 0, speed: 2.5 },
-			{ src: loadImage('hedgehog/Assets/_03_distant_trees.png'), x: 0, speed: 3 },
-			{ src: loadImage('hedgehog/Assets/_02_trees and bushes.png'), x: 0, speed: 4 },
-			{ src: loadImage('hedgehog/Assets/_01_ground.png'), x: 0, speed: 7 },
+			{ src: loadImage('Assets/_11_background.png'), x: 0, speed: 0 },
+			{ src: loadImage('Assets/_10_distant_clouds.png'), x: 0, speed: 0.3 },
+			{ src: loadImage('Assets/_09_distant_clouds1.png'), x: 0, speed: 0.7 },
+			{ src: loadImage('Assets/_08_clouds.png'), x: 0, speed: 1 },
+			{ src: loadImage('Assets/_07_huge_clouds.png'), x: 0, speed: 1.3 },
+			{ src: loadImage('Assets/_06_hill2.png'), x: 0, speed: 1.7 },
+			{ src: loadImage('Assets/_05_hill1.png'), x: 0, speed: 2 },
+			{ src: loadImage('Assets/_04_bushes.png'), x: 0, speed: 2.5 },
+			{ src: loadImage('Assets/_03_distant_trees.png'), x: 0, speed: 3 },
+			{ src: loadImage('Assets/_02_trees and bushes.png'), x: 0, speed: 4 },
+			{ src: loadImage('Assets/_01_ground.png'), x: 0, speed: 7 },
 		]
 
 	}
