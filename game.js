@@ -14,12 +14,9 @@ class Game {
 		this.collectionImage
 		this.endGameImage
 		this.button
-		this.forestSound
 	}
 
 	preload() {
-
-		//this.forestSound = loadSound('assets/0100.mp3')
 
 		this.endGameImage = loadImage('Assets/pngaaa.com-763555.png')
 
