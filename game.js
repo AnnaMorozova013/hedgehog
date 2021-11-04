@@ -6,7 +6,8 @@ class Game {
 		this.obstacles = []
 		this.collections = []
 		this.score = 0
-		this.lives = 3
+		this.lives = ['❤️', '❤️', '❤️']
+		this.gameOver = false 
 	}
 	constructor() {
 		this.backgroundImages
@@ -16,8 +17,6 @@ class Game {
 	}
 
 	preload() {
-
-		this.livesImage = loadImage('assets/pic-heart-31687.png')
 
 		this.endGameImage = loadImage('assets/pngaaa.com-763555.png')
 
@@ -89,6 +88,6 @@ class Game {
 		text('Score:', 50, 100);
 		text(this.score, 270, 100)
 		text('Lives:', 50, 200)
-		text(this.lives, 270, 200 )
+		text(this.lives.join(''), 270, 200 )
 	}
 }

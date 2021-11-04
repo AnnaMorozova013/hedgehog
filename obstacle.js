@@ -48,7 +48,7 @@ class Obstacle {
     if (dist(obstacleMiddleX, obstacleMiddleY, playerX, playerY) > this.height) {
       return false
     } else {
-       game.lives--
+       game.lives.splice(-1)
         return true
     }    
   }
