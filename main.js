@@ -8,7 +8,6 @@ function preload() {
 function setup() {
 	createCanvas(2000, 1000)
 	game.setup() 
-	game.resetSketch()
 }
 
 function draw() {

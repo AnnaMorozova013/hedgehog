@@ -43,11 +43,8 @@ class Game {
 	}
 
 	resetSketch () {
-		this.obstacles = []
-		this.collections = []
-		this.score = 0
-		this.lives = ['❤️', '❤️', '❤️'] 
-}
+		window.location.reload()
+	}
 
 	draw() {
 
@@ -103,8 +100,7 @@ class Game {
 		if(this.lives.length <= 0) {
 			noLoop()
 			image(this.endGameImage, 500, 250, 1000, 500)
-			this.button = createImg('assets/4972899ccd327d1.png', 800, 800)
-			this.button.position(1000)
+			this.button = createImg('assets/4972899ccd327d1.png', 1000, 500)
 			this.button.width = 150
 			this.button.height = 500
 			this.button.mousePressed(this.resetSketch)
