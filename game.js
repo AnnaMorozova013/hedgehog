@@ -18,13 +18,13 @@ class Game {
 
 	preload() {
 
-		this.endGameImage = loadImage('Assets/pngaaa.com-763555.png')
+		this.endGameImage = loadImage('assets/pngaaa.com-763555.png')
 
-		this.obstacleImage = loadImage('Assets/kisspng-mushroom-cartoon-snacks-5acaa7e9d23ae5.2640844415232306978611.png')
+		this.obstacleImage = loadImage('assets/kisspng-mushroom-cartoon-snacks-5acaa7e9d23ae5.2640844415232306978611.png')
 
-		this.collectionImage = loadImage('Assets/kisspng-cartoon-illustration-cartoon-mushrooms-5a99dc89e28990.8592031715200329059279.png')
+		this.collectionImage = loadImage('assets/kisspng-cartoon-illustration-cartoon-mushrooms-5a99dc89e28990.8592031715200329059279.png')
 
-		this.playerImage = loadImage('Assets/kisspng-european-hedgehog-u0418u0441u0442u043eu0440u0438u0-cartoon-hedgehog-5a7ac1116d4006.8550967915179942574475.png')
+		this.playerImage = loadImage('assets/kisspng-european-hedgehog-u0418u0441u0442u043eu0440u0438u0-cartoon-hedgehog-5a7ac1116d4006.8550967915179942574475.png')
 
 		this.backgroundImages = [
 			{ src: loadImage('assets/11background.png'), x: 0, speed: 0 },
@@ -100,7 +100,7 @@ class Game {
 		if (this.lives.length <= 0) {
 			noLoop()
 			image(this.endGameImage, 500, 250, 1000, 500)
-			this.button = createImg('Assets/4972899ccd327d1.png', 1000, 500)
+			this.button = createImg('assets/4972899ccd327d1.png', 1000, 500)
 			this.button.width = 150
 			this.button.height = 500
 			this.button.mousePressed(this.resetSketch)
