@@ -7,6 +7,8 @@ class Game {
 		this.collections = []
 		this.score = 0
 		this.lives = ['❤️', '❤️', '❤️']
+		this.forestSound = new Audio('assets/mixkit-forest-birds-ambience-1210.wav')
+
 	}
 	constructor() {
 		this.backgroundImages
@@ -14,9 +16,12 @@ class Game {
 		this.collectionImage
 		this.endGameImage
 		this.button
+		this.startGameImage
 	}
 
 	preload() {
+
+		this.startGameImage = loadImage('assets/Daco2398008.png')
 
 		this.endGameImage = loadImage('assets/pngaaa.com-763555.png')
 
@@ -47,7 +52,6 @@ class Game {
 	}
 
 	draw() {
-
 		clear()
 		this.background.draw()
 		this.player.draw()
@@ -99,6 +103,7 @@ class Game {
 
 		if (this.lives.length <= 0) {
 			noLoop()
+			game.forestSound.pause()
 			image(this.endGameImage, 500, 250, 1000, 500)
 			this.button = createImg('assets/4972899ccd327d1.png', 1000, 500)
 			this.button.width = 150

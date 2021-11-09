@@ -1,6 +1,11 @@
 class Background {
 
+    constructor() {
+    this.start = true
+    }
+
     draw() {
+
         game.backgroundImages.forEach(function (img) {
             img.x -= img.speed;
             image(img.src, img.x, 0, width, height)
